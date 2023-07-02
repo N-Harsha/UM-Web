@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hydraulic Power Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="mb-4">Hydraulic Power Calculator</h3>
+      <form>
+        <div class="rounded rounded-md border p-3 position-relative">
+          <span class="legend">Input</span>
+          <div class="mb-3">
+            <label for="flowRate" class="form-label">Flow Rate</label>
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                name="flowRate"
+                placeholder="Enter value for flow rate"
+                min="0"
+              />
+              <select
+                class="form-select text-center"
+                id="flowRateUnits"
+                name="flowRate"
+              >
+                <option selected disabled hidden>
+                  Select a flow rate unit
+                </option>
+                <option value="LPM">LPM</option>
+                <option value="LPH">LPH</option>
+                <option value="GPM">GPM</option>
+              </select>
+            </div>
+            <span class="error-control">Please enter a valid flow rate</span>
+          </div>
+          <div class="mb-3">
+            <label for="pressure" class="form-label">Pressure</label>
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                name="pressure"
+                placeholder="Enter value for pressure"
+                min="0"
+              />
+              <select
+                class="form-select text-center"
+                id="pressureUnits"
+                name="pressure"
+              >
+                <option selected disabled hidden>Select a pressure unit</option>
+                <option value="Kg/cm2">Kg/cm2</option>
+                <option value="PSI">PSI</option>
+                <option value="bar">bar</option>
+                <option value="MPa">MPa</option>
+              </select>
+            </div>
+            <span class="error-control">
+              Please enter a valid pressure value
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="efficiency" class="form-label"
+              >Pump Efficiency ( % )</label
+            >
+            <div class="input-group w-25">
+              <input
+                type="number"
+                class="form-control"
+                name="efficiency"
+                placeholder="Enter value for Pump Efficiency"
+                min="1"
+                max="100"
+              />
+            </div>
+            <span class="error-control">Please enter a valid Efficiency</span>
+          </div>
+        </div>
+        <div class="rounded rounded-md border p-3 mt-3 position-relative">
+          <span class="legend">Output</span>
+          <div class="mb-3">
+            <label for="pumpPower" class="form-label">Pump power</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="pumpPower" disabled />
+              <select
+                class="form-select text-center"
+                id="pumpPowerUnits"
+                name="pumpPower"
+              >
+                <option selected disabled hidden>
+                  Select a flow power units
+                </option>
+                <option value="HP">HP</option>
+                <option value="KW">KW</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="motorPower" class="form-label">Motor power</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="motorPower"
+                disabled
+              />
+              <select
+                class="form-select text-center"
+                id="motorPowerUnits"
+                name="motorPower"
+              >
+                <option selected disabled hidden>
+                  Select a flow power units
+                </option>
+                <option value="HP">HP</option>
+                <option value="KW">KW</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="./js/index.js" type="module" />
+  </body>
+</html>

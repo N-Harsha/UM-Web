@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+select {
+  max-width: 202px;
+}
+.legend {
+  position: absolute;
+  top: -16px;
+  background-color: white;
+  font-size: larger;
+}
+
+span.error-control {
+  color: red;
+  display: none;
+}
+
+div.input-group[error="true"] + span.error-control {
+  display: block;
+}
+
+.input-group[error="true"] > input {
+  border-color: red;
+}
+
+input {
+  padding: 10px 20px !important;
+}
