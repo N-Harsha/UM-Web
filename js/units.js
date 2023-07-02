@@ -41,7 +41,7 @@ export function convertEfficiency(value) {
     console.error("Invalid value", value);
     return undefined;
   }
-  return value / 100;
+  return value / 100.0;
 }
 
 const PowerUnits = {

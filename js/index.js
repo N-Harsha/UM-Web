@@ -8,6 +8,7 @@ import {
 import { validateNumber } from "./utils.js";
 
 const computePumpPower = (flowRate, pressure, pumpEfficiency, unit) => {
+  console.log(flowRate, pressure, pumpEfficiency);
   // Parameter validation
   if (
     typeof flowRate !== "number" ||
@@ -19,7 +20,7 @@ const computePumpPower = (flowRate, pressure, pumpEfficiency, unit) => {
   }
 
   // Calculation
-  const pumpPowerHP = (flowRate * pressure * 10) / (4500 * pumpEfficiency);
+  const pumpPowerHP = (flowRate * pressure * 10) / 4500 / pumpEfficiency;
   return convertPower(unit, pumpPowerHP);
 };
 
@@ -132,6 +133,7 @@ const userInputs = document.querySelectorAll("input:not([disabled])");
 for (const userInput of userInputs) {
   userInput.value = DEFAULT[userInput.name].value;
   userInput.addEventListener("keyup", updateChanges);
+  userInput.addEventListener("wheel", updateChanges);
 }
 
 updateChanges();
