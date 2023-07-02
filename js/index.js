@@ -8,7 +8,6 @@ import {
 import { validateNumber } from "./utils.js";
 
 const computePumpPower = (flowRate, pressure, pumpEfficiency, unit) => {
-  console.log(flowRate, pressure, pumpEfficiency);
   // Parameter validation
   if (
     typeof flowRate !== "number" ||
